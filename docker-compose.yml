@@ -16,3 +16,4 @@ services:
        - '/home/opengrok/opengrok-etc/:/opengrok/etc/'  # folder contains configuration.xml
        - '/home/opengrok/opengrok-data/:/opengrok/data/'  # index and other things for source code
        - '~/.ssh/:/root/.ssh/'
+       - '/etc/localtime:/etc/localtime:ro'
