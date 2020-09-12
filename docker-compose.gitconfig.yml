@@ -16,4 +16,5 @@ services:
        - './etc/:/opengrok/etc/'  # folder contains configuration.xml
        - './data/:/opengrok/data/'  # index and other things for source code
        - '~/.ssh/:/root/.ssh/'
+       - '.gitconfig:/root/.gitconfig'
        - '/etc/localtime:/etc/localtime:ro'
