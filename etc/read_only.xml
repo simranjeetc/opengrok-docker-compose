@@ -24,10 +24,20 @@
     <void method="addGroup">
         <object class="org.opengrok.indexer.configuration.Group">
             <void property="name">
-		    <string>3_JobService</string>
+		    <string>3_Other-FAS-Libraries</string>
 	    </void>
             <void property="pattern">
-                <string>JobService.*</string>
+                <string>Other-FAS-Libraries.*</string>
+            </void>
+        </object>
+    </void>
+    <void method="addGroup">
+        <object class="org.opengrok.indexer.configuration.Group">
+            <void property="name">
+                <string>4_Branches</string>
+            </void>
+            <void property="pattern">
+                <string>Branches.*</string>
             </void>
         </object>
     </void>
