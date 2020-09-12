@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_65" class="java.beans.XMLDecoder">
+ <object class="org.opengrok.indexer.configuration.Configuration" id="Configuration0">
+    <void method="addGroup">
+        <object class="org.opengrok.indexer.configuration.Group">
+            <void property="name">
+                <string>1_verity</string>
+            </void>
+            <void property="pattern">
+                <string>verity.*</string>
+            </void>
+        </object>
+    </void>
+    <void method="addGroup">
+	<object class="org.opengrok.indexer.configuration.Group">
+            <void property="name">
+                <string>2_caf</string>
+            </void>
+            <void property="pattern">
+                <string>caf.*</string>
+            </void>
+        </object>
+    </void>
+    <void method="addGroup">
+        <object class="org.opengrok.indexer.configuration.Group">
+            <void property="name">
+		    <string>3_JobService</string>
+	    </void>
+            <void property="pattern">
+                <string>JobService.*</string>
+            </void>
+        </object>
+    </void>
+ </object>
+</java>
+
