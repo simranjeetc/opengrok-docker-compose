@@ -4,7 +4,8 @@ version: "3"
 services:
   opengrok-1-7-11:
     container_name: opengrok-1.7.11
-    image: opengrok/docker:1.7.11
+    image: opengrok-valve:1
+    restart: on-failure
     volumes:
       - 'opengrok_data1_7_11:/opengrok/data'
       - './src/:/opengrok/src/'  # source code
@@ -12,6 +13,7 @@ services:
       - './ssh/:/root/.ssh/'
       - '.gitconfig:/root/.gitconfig'
       - '/etc/localtime:/etc/localtime:ro'
+      - './logs/:/usr/local/tomcat/logs/'
     ports:
       - "9091:8080/tcp"
       - "5001:5000/tcp"
