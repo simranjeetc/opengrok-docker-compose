@@ -18,7 +18,7 @@ services:
       - "9091:8080/tcp"
       - "5001:5000/tcp"
     environment:
-      SYNC_PERIOD_MINUTES: '10'
+      SYNC_PERIOD_MINUTES: '30'
       INDEXER_OPT: '-H -P -G -R /opengrok/etc/read_only.xml'
     # Volumes store your data between container upgrades
 volumes:
