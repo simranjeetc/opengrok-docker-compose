@@ -16,3 +16,18 @@ docker build -t opengrok-valve:1 .
 ## Execute docker-compose-1-7-11.yml
 
 docker-compose -f docker-compose-1-7-11.yml up -d
+
+
+## Capture search query count from access logs
+cat localhost_access_log.2021-06-19.txt | grep 'GET \/search' | cut -d " " -f1 | wc -l
+
+OR
+
+cat localhost_access_log.2021-06-19.txt | awk '/GET \/search/ {print $1}' | wc -l
+
+## Number of unique ips/hosts searching on opengrok
+cat localhost_access_log.2021-06-19.txt | grep 'GET \/search' | cut -d " " -f1 | uniq | wc -l
+
+OR
+
+cat localhost_access_log.2021-06-19.txt | awk '/GET \/search/ {print $1}' | uniq | wc -l
