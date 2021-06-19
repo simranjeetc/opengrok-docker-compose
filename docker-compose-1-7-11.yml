@@ -15,7 +15,7 @@ services:
       - '/etc/localtime:/etc/localtime:ro'
       - './logs/:/usr/local/tomcat/logs/'
     ports:
-      - "9091:8080/tcp"
+      - "9090:8080/tcp"
       - "5001:5000/tcp"
     environment:
       SYNC_PERIOD_MINUTES: '30'
