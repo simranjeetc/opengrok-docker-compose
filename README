@@ -1,3 +1,4 @@
 Enable tomcat valve logs
 
-sed -i 's#<Disabled className="org.apache.catalina.valves.AccessLogValve"#<Valve className="org.apache.catalina.valves.AccessLogValve"#' server.xml.bk
+cd /usr/local/tomcat/conf
+sed -i 's#<Disabled className="org.apache.catalina.valves.AccessLogValve"#<Valve className="org.apache.catalina.valves.AccessLogValve"#' server.xml
