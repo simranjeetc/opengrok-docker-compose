@@ -31,3 +31,28 @@ cat localhost_access_log.2021-06-19.txt | grep 'GET \/search' | cut -d " " -f1 |
 OR
 
 cat localhost_access_log.2021-06-19.txt | awk '/GET \/search/ {print $1}' | uniq | wc -l
+
+
+## Git configuration
+
+### Git repos from different accounts
+
+Create a config file under /root/.ssh/ directory
+
+The content of the config can look something like below
+
+Host github.houston.softwaregrp.net
+HostName github.houston.softwaregrp.net
+User root
+IdentityFile ~/.ssh/id_rsa
+
+Host github.com
+HostName github.com
+User root
+IdentityFile ~/.ssh/id_rsa_github_personal
+
+Notice that the User is root here. 
+
+RUN chmod 400 /root/.ssh/config
+
+RUN chown root:root /root/.ssh/config
