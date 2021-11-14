@@ -1,0 +1,23 @@
+ersion: "3"
+
+# More info at https://github.com/oracle/opengrok/docker/
+services:
+  opengrok:
+    container_name: opengrok
+    image: opengrok/docker:1.4
+    volumes:
+      - 'opengrok_data:/opengrok/data'
+      - './src/:/opengrok/src/'  # source code
+      - './etc/:/opengrok/etc/'  # folder contains configuration.xml
+      - './ssh/:/root/.ssh/'
+      - '.gitconfig:/root/.gitconfig'
+      - '/etc/localtime:/etc/localtime:ro'
+    ports:
+      - "9090:8080/tcp"
+    environment:
+      #SYNC_PERIOD_MINUTES: '60i'
+      REINDEX : '60'
+      INDEXER_FLAGS: '-H -P -S -G -R /opengrok/etc/read_only.xml'
+    # Volumes store your data between container upgrades
+volumes:
+  opengrok_data:

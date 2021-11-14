@@ -1,0 +1,27 @@
+version: "3"
+
+# More info at https://github.com/oracle/opengrok/docker/
+services:
+  opengrok-1-7-11:
+    container_name: opengrok-1.7.11
+    image: opengrok-valve:1
+    restart: on-failure
+    volumes:
+      - 'opengrok_data1_7_11:/opengrok/data'
+      - './src/:/opengrok/src/'  # source code
+      - './etc/:/opengrok/etc/'  # folder contains configuration.xml
+      - './ssh/:/root/.ssh/'
+      - '.gitconfig:/root/.gitconfig'
+      - '/etc/localtime:/etc/localtime:ro'
+      - './logs/:/usr/local/tomcat/logs/'
+    ports:
+      - "9090:8080/tcp"
+      - "5001:5000/tcp"
+    environment:
+      SYNC_PERIOD_MINUTES: '30'
+      INDEXER_OPT: '-H -P -G -R /opengrok/etc/read_only.xml'
+    # Volumes store your data between container upgrades
+volumes:
+  opengrok_data1_7_11:
+networks:
+  opengrok-1-7-11:
