@@ -1,6 +1,0 @@
-# Empty config file for opengrok-mirror
-ignore_errors: true
-
-projects:
-  jdk8.*:
-    disabled: true

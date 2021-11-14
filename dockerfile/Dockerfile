@@ -12,6 +12,8 @@ RUN sed -i 's#<Disabled className="org.apache.catalina.valves.AccessLogValve"#<V
 
 RUN sed -i 's#connectionTimeout="20000"#connectionTimeout="20000" enableLookups="true"#' /usr/local/tomcat/conf/server.xml
 
+RUN echo "org.opengrok.level = ALL" >> /usr/local/tomcat/conf/logging.properties
+
 RUN chmod -R 777 /usr/local/tomcat/logs
 
 COPY scripts/checkSync.sh /scripts/checkSync.sh

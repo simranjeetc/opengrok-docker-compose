@@ -8,7 +8,7 @@ services:
     restart: on-failure
     volumes:
       - 'opengrok_data1_7_11:/opengrok/data'
-      - './src/:/opengrok/src/'  # source code
+      - '/code/opengrok/src/:/opengrok/src/'  # source code
       - './etc/:/opengrok/etc/'  # folder contains configuration.xml
       - './ssh/:/root/.ssh/'
       - '.gitconfig:/root/.gitconfig'
@@ -18,7 +18,9 @@ services:
       - "9090:8080/tcp"
       - "5001:5000/tcp"
     environment:
-      SYNC_PERIOD_MINUTES: '30'
+      SYNC_PERIOD_MINUTES: '60'
+      OPENGROK_LOG_LEVEL: 'INFO'
+      NOMIRROR: 'true'
       INDEXER_OPT: '-H -P -G -R /opengrok/etc/read_only.xml'
     # Volumes store your data between container upgrades
 volumes:
