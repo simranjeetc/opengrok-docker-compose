@@ -30,5 +30,5 @@ RUN chmod 400 /root/.ssh/config
 
 RUN chown root:root /root/.ssh/config
 
-CMD service cron start && service rsyslog start && /scripts/start.py && /bin/bash
-#CMD chmod 400 /root/.ssh/config && chown root:root /root/.ssh/config && service cron start && service rsyslog start && /scripts/start.py && /bin/bash
+#CMD service cron start && service rsyslog start && /scripts/start.py && /bin/bash
+CMD chmod 400 /root/.ssh/config && chown root:root /root/.ssh/config && service cron start && service rsyslog start && /scripts/start.py && /bin/bash
