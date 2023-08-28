@@ -49,8 +49,8 @@ Create a config file under /root/.ssh/ directory
 
 The content of the config can look something like below
 ```bash
-Host github.houston.softwaregrp.net
-HostName github.houston.softwaregrp.net
+Host github.XXXX.YYYY.net
+HostName github.XXXX.YYYY.net
 User root
 IdentityFile ~/.ssh/id_rsa
 
