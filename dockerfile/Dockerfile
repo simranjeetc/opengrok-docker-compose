@@ -20,7 +20,7 @@ RUN chmod +x /scripts/checkSync.sh
 
 RUN (crontab -l 2>/dev/null; echo "*/60 * * * * /scripts/checkSync.sh > /usr/local/tomcat/logs/cron-backup.log 2>&1") | crontab -
 
-ADD ssh /root/.ssh/
+ADD $SSH_DIR /root/.ssh/
 
 RUN chmod 400 /root/.ssh/config
 
