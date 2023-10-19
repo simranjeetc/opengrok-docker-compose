@@ -1,4 +1,4 @@
-FROM opengrok/docker:1.7.11
+FROM opengrok/docker:1.12.19
 
 RUN apt-get update && apt-get install -y vim && apt-get install -y cron && apt-get install -y rsyslog
 
